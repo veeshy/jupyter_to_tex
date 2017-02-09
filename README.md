@@ -11,9 +11,14 @@ There is no simple way to export latex (.tex) source code from jupyter notebooks
   > python remove_py_md.py path_to_md.md
   
   > output: path_to_md_no_py.md
-* Run pandocs on this outputted .md file
+* Run pandocs on this outputted .md file. ( --wrap=preserve keeps spacing of the original markdown)
 
-  > pandoc --listings -f markdown -t latex path_to_md_no_py.md -o tex_output.tex
+  > pandoc --listings -f markdown -t latex path_to_md_no_py.md -o tex_output.tex  --wrap=preserve
   
 ## Requires
 * pandocs (comes with the anaconda stack)
+
+## Limitations
+The tex code created is meant to be imported via an \include{} statement, or copying and pasting into working tex files (i.e., there is no latex boilerplate code in the pandocs output)
+
+The tex code will still likely need some cleaning up but it's still a rather nice workflow.
