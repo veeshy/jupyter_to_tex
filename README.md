@@ -14,3 +14,6 @@ There is no simple way to export latex (.tex) source code from jupyter notebooks
 * Run pandocs on this outputted .md file
 
   > pandoc --listings -f markdown -t latex path_to_md_no_py.md -o tex_output.tex
+  
+## Requires
+* pandocs (comes with the anaconda stack)
